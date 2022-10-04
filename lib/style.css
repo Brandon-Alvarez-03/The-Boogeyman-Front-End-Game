@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgrey;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+#title {
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: center;
+  width: 33%;
+  height: 10%;
+  background-color: lightgray;
+  border: solid 2px black;
+  margin-top: -60px;
+  margin-bottom: 30px;
+}
+
+@font-face {
+  font-family: scaryFont;
+  src: url(../fonts/scream-real.regular.ttf);
+  font-size: larger;
+}
+
+h1 {
+  font-family: scaryFont;
+}
+
+.game-window {
+  box-sizing: border-box;
+  min-width: 69%;
+  height: 55%;
+  margin: 10px;
+  background-color: lightgray;
+  border: solid 2px black;
+}
