@@ -33,9 +33,21 @@ h1 {
 
 .game-window {
   box-sizing: border-box;
-  min-width: 69%;
+  width: 69%;
   height: 55%;
   margin: 10px;
-  background-color: lightgray;
+  /* background-color: lightgray; */
   border: solid 2px black;
+}
+
+#canvas1 {
+  box-sizing: border-box;
+  position: absolute;
+  background: lightblue;
+  /* width: 68.75%;
+  height: 54.75%; */
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
