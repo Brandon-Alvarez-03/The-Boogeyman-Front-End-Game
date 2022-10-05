@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: darkgrey;
+  background-color: black;
   height: 100vh;
   margin: 0 auto;
 }
@@ -15,8 +15,8 @@ body {
   text-align: center;
   width: 33%;
   height: 10%;
-  background-color: lightgray;
-  border: solid 2px black;
+  background-color: black;
+  border: none;
   margin-top: -60px;
   margin-bottom: 30px;
 }
@@ -24,11 +24,12 @@ body {
 @font-face {
   font-family: scaryFont;
   src: url(../fonts/scream-real.regular.ttf);
-  font-size: larger;
+  font-size: xx-large;
 }
 
 h1 {
   font-family: scaryFont;
+  color: #b73014;
 }
 
 .game-window {
@@ -40,7 +41,7 @@ h1 {
   /* height: 65%; */
   margin: 10px;
   /* background-color: lightgray; */
-  border: solid 2px whitesmoke;
+  border: solid 0.5px #b73014;
 }
 
 #canvas1 {
@@ -54,3 +55,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%); */
 }
+
+/* audio {
+  visibility: hidden;
+} */
