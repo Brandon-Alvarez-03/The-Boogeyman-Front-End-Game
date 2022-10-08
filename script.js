@@ -105,11 +105,11 @@ window.addEventListener("load", () => {
       this.frameX = 0;
       this.frameY = 0;
       this.maxFrame = 7;
-      this.fps = 8;
+      this.fps = 7;
       this.frameTimer = 0;
       this.frameInterval = 1000 / this.fps;
       this.speed = 1;
-      this.speedIncrement = 0.14; //change back to 0.14
+      this.speedIncrement = 0.145; //change back to 0.14
     }
 
     draw(context) {
@@ -135,7 +135,7 @@ window.addEventListener("load", () => {
 
       const dy = laurie.y - this.y;
       const dist = Math.sqrt(dx ** 2 + dy ** 2); //pythagorean theorem
-      const collideDist = this.width / 4;
+      const collideDist = this.width / 4 - 5;
       //   console.log(dist);
       if (laurie.x <= this.x + 20) {
         laurie.x = this.x + 10; // if player position moves onto neg x-axis set player position back to zero (left game boundary)
@@ -184,12 +184,12 @@ window.addEventListener("load", () => {
       this.frameX = 0;
       this.frameY = 0;
       this.maxFrame = 5;
-      this.fps = 14;
+      this.fps = 13;
       this.frameTimer = 0;
       this.frameInterval = 1000 / this.fps;
       this.speed = 0;
       this.vy = 0;
-      this.gravity = 1.05;
+      this.gravity = 1.23;
     }
     //this canvas method allows us to draw the context that we pass in to the canvas
     draw(context) {
@@ -216,9 +216,9 @@ window.addEventListener("load", () => {
         const dy = obstacle.y - this.y;
         const dist = Math.sqrt(dx ** 2 + dy ** 2); //pythagorean theorem
         // console.log(dist);
-        if (dist < obstacle.width / 2 + 88) {
+        if (dist < obstacle.width / 2 + 100) {
           //160 px
-          this.x -= 100;
+          this.x -= 120;
         }
       });
 
