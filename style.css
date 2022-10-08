@@ -23,7 +23,7 @@ body {
 
 @font-face {
   font-family: scaryFont;
-  src: url(../fonts/scream-real.regular.ttf);
+  src: url(fonts/scream-real.regular.ttf);
   font-size: xx-large;
 }
 

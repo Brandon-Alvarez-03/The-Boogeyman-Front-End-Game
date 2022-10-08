@@ -21,10 +21,10 @@ window.addEventListener("load", () => {
 
   let gameWindow = document.querySelector(".game-window");
   const gameAudio = new Audio(
-    "../music/Y2Mate.is - John Carpenter - The Shape Kills (Extended)-IS1du1ysXbw-160k-1655111776518.mp3"
+    "music/Y2Mate.is - John Carpenter - The Shape Kills (Extended)-IS1du1ysXbw-160k-1655111776518.mp3"
   );
   const gameAudio2 = new Audio(
-    "../music/Y2Mate.is - John Carpenter - The Shape Hunts Allyson-Lw1QD_SkbXo-160k-1655183577037.mp3"
+    "music/Y2Mate.is - John Carpenter - The Shape Hunts Allyson-Lw1QD_SkbXo-160k-1655183577037.mp3"
   );
   let musicArr = [gameAudio, gameAudio2];
   let randomTrack = musicArr[Math.floor(Math.random() * musicArr.length)];
@@ -98,7 +98,7 @@ window.addEventListener("load", () => {
       this.width = 265;
       this.height = 280;
       //can move player by adjusting x and y coords
-      this.x = 0 - this.width * 1.18;
+      this.x = 0 - this.width * 1.15;
       //the game height minus the players height starts it right on the ground
       this.y = this.gameHeight - this.height;
       this.image = document.getElementById("meyersImg");
