@@ -45,6 +45,8 @@ To prevent the build up of objects off sreen, once an object is off screen, it i
 
 A countdown clock is drawn onto the canvas and updated using conditional logic and string interpolation.
 
+Sprites sources from Mugen guild: https://mugenguild.com/forum/topics/
+
 ### Intended Use
 
 ---
