@@ -1,12 +1,15 @@
 // NEXT STEPS:
 
-// fix timer display to go above one minute
 // dont forget to un-comment if conditions in the animate section
-// start it on laurie's lookback somehow
 // change you survived from timer code block to if gameOver == true after the gameOver clearRect from canvas
-// still need to better randomize the obstacle spawnrate and speed
+
+//clean up michaels animations
+// clean up win and loss scenarios
+//make a start screen and hit enter to start
+// make a credits seen that runs after game over
 
 //we want javascript to wait until game is fully loaded
+
 window.addEventListener("load", () => {
   const canvas = document.getElementById("canvas1");
   //ctx = contect --> instance of built-in canvas 2d that holds drawing methods and properties needed for animation
@@ -100,7 +103,7 @@ window.addEventListener("load", () => {
       this.image = document.getElementById("meyersImg");
       this.frameX = 0;
       this.frameY = 0;
-      this.maxFrame = 7;
+      this.maxFrame = 11;
       this.fps = 7;
       this.frameTimer = 0;
       this.frameInterval = 1000 / this.fps;
