@@ -20,12 +20,8 @@ window.addEventListener("load", () => {
   let gameLost = false;
 
   let gameWindow = document.querySelector(".game-window");
-  const gameAudio = new Audio(
-    "music/Y2Mate.is - John Carpenter - The Shape Kills (Extended)-IS1du1ysXbw-160k-1655111776518.mp3"
-  );
-  const gameAudio2 = new Audio(
-    "music/Y2Mate.is - John Carpenter - The Shape Hunts Allyson-Lw1QD_SkbXo-160k-1655183577037.mp3"
-  );
+  const gameAudio = new Audio("music/scary-chase-music.mp3");
+  const gameAudio2 = new Audio("music/chase-music-option-2.mp3");
   let musicArr = [gameAudio, gameAudio2];
   let randomTrack = musicArr[Math.floor(Math.random() * musicArr.length)];
   console.log(containerWidth, containerHeight);
@@ -223,17 +219,18 @@ window.addEventListener("load", () => {
       });
 
       // sprite animation
-      if (this.frameTimer > this.frameInterval) {
-        if (this.frameX >= this.maxFrame) {
-          this.frameX = 1;
+      if (timerStart) {
+        if (this.frameTimer > this.frameInterval) {
+          if (this.frameX >= this.maxFrame) {
+            this.frameX = 1;
+          } else {
+            this.frameX++;
+            this.frameTimer = 0;
+          }
         } else {
-          this.frameX++;
-          this.frameTimer = 0;
+          this.frameTimer += deltaTime;
         }
-      } else {
-        this.frameTimer += deltaTime;
       }
-
       // controls
 
       if (input.keys.indexOf("ArrowRight") > -1) {
@@ -302,10 +299,12 @@ window.addEventListener("load", () => {
     }
     update() {
       //this updates the background to scroll to the left
-      this.x -= this.speed;
-      if (this.x < 0 - this.width) {
-        this.x = 0;
-      } // once background scrolls off-screen, set back to zero position
+      if (timerStart) {
+        this.x -= this.speed;
+        if (this.x < 0 - this.width) {
+          this.x = 0;
+        } // once background scrolls off-screen, set back to zero position
+      }
     }
   }
 
