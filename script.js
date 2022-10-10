@@ -3,11 +3,6 @@
 // dont forget to un-comment if conditions in the animate section
 // change you survived from timer code block to if gameOver == true after the gameOver clearRect from canvas
 
-//clean up michaels animations
-// clean up win and loss scenarios
-//make a start screen and hit enter to start
-// make a credits seen that runs after game over
-
 //we want javascript to wait until game is fully loaded
 
 window.addEventListener("load", () => {
@@ -108,7 +103,7 @@ window.addEventListener("load", () => {
       this.frameTimer = 0;
       this.frameInterval = 1000 / this.fps;
       this.speed = 1;
-      this.speedIncrement = 0.145; //change back to 0.14
+      this.speedIncrement = 0.147; //change back to 0.14
     }
 
     draw(context) {
@@ -136,8 +131,8 @@ window.addEventListener("load", () => {
       const dist = Math.sqrt(dx ** 2 + dy ** 2); //pythagorean theorem
       const collideDist = this.width / 4 - 5;
       //   console.log(dist);
-      if (laurie.x <= this.x + 20) {
-        laurie.x = this.x + 10; // if player position moves onto neg x-axis set player position back to zero (left game boundary)
+      if (laurie.x <= this.x + -1) {
+        laurie.x = this.x + 4; // if player position moves onto neg x-axis set player position back to zero (left game boundary)
       }
       if (dist < collideDist) {
         gameLost = true;
@@ -372,9 +367,6 @@ window.addEventListener("load", () => {
   function countdown() {
     if (time > 0) {
       time -= 1;
-      // displayTime = `0:${time}`;
-      // context.fillText(displayTime, 1000, 40);
-      // console.log(time);
     }
   }
   setInterval(countdown, 1000);
@@ -427,7 +419,6 @@ window.addEventListener("load", () => {
 
   // instantiate the input handler
   const input = new InputHandler();
-
   const michael = new MichaelMeyers(canvas.width, canvas.height);
   //in this instance of the Player class, we pass in the canvas width and height to establish game boundaries (check this)
   const laurie = new LaurieStrode(canvas.width, canvas.height);
