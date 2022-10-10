@@ -26,6 +26,10 @@ window.addEventListener("load", () => {
   canvas.width = containerWidth;
   canvas.height = containerHeight;
 
+
+
+
+
   // input handler class (applies event listeners to keyboard and holds array of all currently active keys)
   class InputHandler {
     constructor() {
@@ -82,6 +86,12 @@ window.addEventListener("load", () => {
       });
     }
   }
+
+
+
+
+
+
 
   // meyers class
 
@@ -162,6 +172,11 @@ window.addEventListener("load", () => {
       }
     }
   }
+
+
+
+
+
 
   // player class (reacts to keys and reacts by draws in and update players)
   class LaurieStrode {
@@ -271,6 +286,11 @@ window.addEventListener("load", () => {
     }
   }
 
+
+
+
+
+
   //background class  (endliss scrolling background)
   class Background {
     constructor(gameWidth, gameHeight) {
@@ -307,6 +327,11 @@ window.addEventListener("load", () => {
   }
 
   // obstacle generation class
+
+
+
+
+
 
   class Obstacle {
     constructor(gameWidth, gameHeight) {
@@ -417,6 +442,11 @@ window.addEventListener("load", () => {
     // console.log(context);
   }
 
+
+
+
+
+  
   // instantiate the input handler
   const input = new InputHandler();
   const michael = new MichaelMeyers(canvas.width, canvas.height);
