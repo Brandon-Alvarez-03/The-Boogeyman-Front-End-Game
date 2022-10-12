@@ -458,7 +458,14 @@ window.addEventListener("load", () => {
   function toggleDisplay() {
     document.getElementById("enterBtn").style.display = "inherit";
   }
-
+  function showControls() {
+    document.getElementById("controls").style.display = "inherit";
+  }
+  function hideControls() {
+    document.getElementById("controls").style.display = "none";
+  }
+  setTimeout(showControls, 1600);
+  setTimeout(hideControls, 8000);
   // instantiate the input handler
   const input = new InputHandler();
   const michael = new MichaelMeyers(canvas.width, canvas.height);

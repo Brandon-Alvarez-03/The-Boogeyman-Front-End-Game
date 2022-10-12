@@ -49,6 +49,9 @@ h1 {
 }
 
 #controls {
+  display: none;
+  overflow-x: visible;
+  overflow-y: visible;
   margin-top: 5px;
   margin-bottom: -40px;
   z-index: 2;
