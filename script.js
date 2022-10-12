@@ -418,6 +418,10 @@ window.addEventListener("load", () => {
   }
 
   function playAgainText() {
+    let remBorder = document.querySelector(".game-window");
+    remBorder.style.borderStyle = "none";
+    let titleDiv = document.getElementById("title");
+    titleDiv.style.display = "none";
     ctx.font = "42px scaryFont";
     ctx.textAlign = "center";
     ctx.fillStyle = "white";
