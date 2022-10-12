@@ -417,7 +417,7 @@ window.addEventListener("load", () => {
     // console.log(context);
   }
 
-  function playAgainText() {
+  function playAgain() {
     let remBorder = document.querySelector(".game-window");
     remBorder.style.borderStyle = "none";
     let titleDiv = document.getElementById("title");
@@ -442,6 +442,14 @@ window.addEventListener("load", () => {
     ctx.textAlign = "center";
     ctx.fillStyle = "#b73014";
     ctx.fillText("Play Again?", containerWidth / 2, containerHeight / 2 + 11);
+
+    // add this to the play again button
+    gameOver = false;
+    gameLost = false;
+  }
+
+  function controlsVisibility() {
+    
   }
 
   // instantiate the input handler
@@ -482,12 +490,10 @@ window.addEventListener("load", () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       gameAudio.pause();
       gameAudio2.play();
-      playAgainText();
+      playAgain();
     }
   }
   //invoke continuous animation loop
   animate(0); // pass zero for timestamp feature
   if (gameOver) console.log(gameOver);
 });
-
-// play again button?
