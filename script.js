@@ -453,6 +453,16 @@ window.addEventListener("load", () => {
     }
   });
 
+  let enterBtn = document.getElementById("enterBtn");
+  enterBtn.addEventListener("click", () => {
+    if (gameOver == true) {
+      console.log("restart the game");
+      gameOver = false;
+      gameLost = false;
+      location.reload();
+    }
+  });
+
   function toggleDisplay() {
     document.getElementById("enterBtn").style.display = "inherit";
   }
