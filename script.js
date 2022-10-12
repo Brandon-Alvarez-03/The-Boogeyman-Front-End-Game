@@ -443,13 +443,20 @@ window.addEventListener("load", () => {
     ctx.fillStyle = "#b73014";
     ctx.fillText("Play Again?", containerWidth / 2, containerHeight / 2 + 11);
 
-    // add this to the play again button
-    gameOver = false;
-    gameLost = false;
+    toggleDisplay();
   }
 
-  function controlsVisibility() {
-    
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && gameOver == true) {
+      console.log("restart the game");
+      gameOver = false;
+      gameLost = false;
+      location.reload();
+    }
+  });
+
+  function toggleDisplay() {
+    document.getElementById("enterBtn").style.display = "inherit";
   }
 
   // instantiate the input handler

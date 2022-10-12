@@ -6,12 +6,13 @@ body {
   background-color: black;
   height: 100vh;
   margin: 0 auto;
+  position: relative;
 }
 
 #title {
   flex-direction: column;
   text-align: center;
-  width: 33%;
+  width: 50%;
   height: 10%;
   background-color: black;
   border: none;
@@ -48,11 +49,15 @@ h1 {
 }
 
 #controls {
-  display: none;
   margin-top: 5px;
+  margin-bottom: -40px;
+  z-index: 2;
 }
 
-#enterBtn {
-  margin-top: 5px;
+.enterBtn {
   display: none;
+  overflow-x: visible;
+  overflow-y: visible;
+  margin-top: 5px;
+  z-index: 2;
 }
