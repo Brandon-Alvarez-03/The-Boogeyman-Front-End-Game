@@ -393,33 +393,29 @@ window.addEventListener("load", () => {
     if (time === 0) {
       gameOver = true;
     }
+  }
+
+  function displayEndGameText() {
     if (gameOver && gameLost) {
-      context.textAlign = "center";
-      context.fillStyle = "white";
-      context.fillText(
-        "You Lost",
-        containerWidth / 2 - 4,
-        containerHeight / 2 - 3
-      );
-      context.textAlign = "center";
-      context.fillStyle = "black";
-      context.fillText(
-        "You Lost",
-        containerWidth / 2 - 3,
-        containerHeight / 2 - 2
-      );
-      context.textAlign = "center";
-      context.fillStyle = "#b73014";
-      context.fillText("You Lost", containerWidth / 2, containerHeight / 2);
+      ctx.textAlign = "center";
+      ctx.fillStyle = "white";
+      ctx.fillText("You Lost", containerWidth / 2 - 4, containerHeight / 2 - 3);
+      ctx.textAlign = "center";
+      ctx.fillStyle = "black";
+      ctx.fillText("You Lost", containerWidth / 2 - 3, containerHeight / 2 - 2);
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#b73014";
+      ctx.fillText("You Lost", containerWidth / 2, containerHeight / 2);
     } else if (gameOver) {
-      context.textAlign = "center";
-      context.fillStyle = "#b73014";
-      context.fillText("You Survived", containerWidth / 2, containerHeight / 2);
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#b73014";
+      ctx.fillText("You Survived", containerWidth / 2, containerHeight / 2);
     }
     // console.log(context);
   }
 
   function playAgain() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     let remBorder = document.querySelector(".game-window");
     remBorder.style.borderStyle = "none";
     let titleDiv = document.getElementById("title");
@@ -467,6 +463,11 @@ window.addEventListener("load", () => {
     document.getElementById("controls").style.display = "none";
   }
 
+  function endGameFunc() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    displayEndGameText();
+  }
+
   // instantiate the input handler
   const input = new InputHandler();
   const michael = new MichaelMeyers(canvas.width, canvas.height);
@@ -502,11 +503,11 @@ window.addEventListener("load", () => {
     // recursion for endless animation loop
     if (gameOver != true) requestAnimationFrame(animate);
     if (gameOver == true) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      setTimeout(endGameFunc, 2200);
       hideControls();
       gameAudio.pause();
       gameAudio2.play();
-      playAgain();
+      setTimeout(playAgain, 10600);
     }
   }
   //invoke continuous animation loop
