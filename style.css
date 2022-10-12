@@ -17,7 +17,7 @@ body {
   background-color: black;
   border: none;
   margin-top: -120px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 @font-face {
@@ -34,7 +34,7 @@ h1 {
 .game-window {
   position: relative;
   min-width: 840px;
-  min-height: 500px;
+  min-height: 520px;
   width: 78%;
   margin: 10px;
   border: solid 0.5px #b73014;
@@ -52,7 +52,7 @@ h1 {
   display: none;
   overflow-x: visible;
   overflow-y: visible;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   margin-bottom: -40px;
   z-index: 2;
 }
@@ -61,6 +61,6 @@ h1 {
   display: none;
   overflow-x: visible;
   overflow-y: visible;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   z-index: 2;
 }

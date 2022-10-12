@@ -44,6 +44,8 @@ window.addEventListener("load", () => {
             musicArr[0].play();
             timerStart = true;
             time = 110;
+            setTimeout(showControls, 1600);
+            setTimeout(hideControls, 8000);
           }
         },
         {once: true}
@@ -464,8 +466,7 @@ window.addEventListener("load", () => {
   function hideControls() {
     document.getElementById("controls").style.display = "none";
   }
-  setTimeout(showControls, 1600);
-  setTimeout(hideControls, 8000);
+
   // instantiate the input handler
   const input = new InputHandler();
   const michael = new MichaelMeyers(canvas.width, canvas.height);
@@ -502,6 +503,7 @@ window.addEventListener("load", () => {
     if (gameOver != true) requestAnimationFrame(animate);
     if (gameOver == true) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      hideControls();
       gameAudio.pause();
       gameAudio2.play();
       playAgain();
