@@ -26,10 +26,6 @@ window.addEventListener("load", () => {
   canvas.width = containerWidth;
   canvas.height = containerHeight;
 
-
-
-
-
   // input handler class (applies event listeners to keyboard and holds array of all currently active keys)
   class InputHandler {
     constructor() {
@@ -86,12 +82,6 @@ window.addEventListener("load", () => {
       });
     }
   }
-
-
-
-
-
-
 
   // meyers class
 
@@ -172,11 +162,6 @@ window.addEventListener("load", () => {
       }
     }
   }
-
-
-
-
-
 
   // player class (reacts to keys and reacts by draws in and update players)
   class LaurieStrode {
@@ -286,11 +271,6 @@ window.addEventListener("load", () => {
     }
   }
 
-
-
-
-
-
   //background class  (endliss scrolling background)
   class Background {
     constructor(gameWidth, gameHeight) {
@@ -327,11 +307,6 @@ window.addEventListener("load", () => {
   }
 
   // obstacle generation class
-
-
-
-
-
 
   class Obstacle {
     constructor(gameWidth, gameHeight) {
@@ -412,7 +387,7 @@ window.addEventListener("load", () => {
     } else {
       displayTime = `0:0${time}`;
     }
-    context.fillText(displayTime, containerWidth * 0.92, 40);
+    context.fillText(displayTime, containerWidth * 0.91, 40);
     if (time === 0) {
       gameOver = true;
     }
@@ -442,11 +417,29 @@ window.addEventListener("load", () => {
     // console.log(context);
   }
 
+  function playAgainText() {
+    ctx.font = "42px scaryFont";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "white";
+    ctx.fillText(
+      "Play Again?",
+      containerWidth / 2 - 3,
+      containerHeight / 2 + 9
+    );
+    ctx.font = "42px scaryFont";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "black";
+    ctx.fillText(
+      "Play Again?",
+      containerWidth / 2 - 3,
+      containerHeight / 2 + 10
+    );
+    ctx.font = "42px scaryFont";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#b73014";
+    ctx.fillText("Play Again?", containerWidth / 2, containerHeight / 2 + 11);
+  }
 
-
-
-
-  
   // instantiate the input handler
   const input = new InputHandler();
   const michael = new MichaelMeyers(canvas.width, canvas.height);
@@ -481,12 +474,16 @@ window.addEventListener("load", () => {
 
     // recursion for endless animation loop
     if (gameOver != true) requestAnimationFrame(animate);
-    // if (gameOver == true) {
-    //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-    //   gameAudio.pause();
-    // }
+    if (gameOver == true) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      gameAudio.pause();
+      gameAudio2.play();
+      playAgainText();
+    }
   }
   //invoke continuous animation loop
   animate(0); // pass zero for timestamp feature
   if (gameOver) console.log(gameOver);
 });
+
+// play again button?
