@@ -1,7 +1,9 @@
 # The Boogeyman: A Front-End-Game
 
 The Boogeyman is a 2D front-end side-scroller game; inspired by the 1978 film "Halloween".
-
+<div align="center">
+<img width="800" alt="The Boogeyman Game Window" src="https://user-images.githubusercontent.com/100237632/196747290-6a200fcf-bc08-42e4-a74d-731967b19224.png">
+</div>
 ## How to Survive
 
 ---
