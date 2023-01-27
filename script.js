@@ -94,7 +94,7 @@ window.addEventListener("load", () => {
       this.width = 265;
       this.height = 280;
       //can move player by adjusting x and y coords
-      this.x = 0 - this.width * 1.15;
+      this.x = 0 - this.width * 1.45;
       //the game height minus the players height starts it right on the ground
       this.y = this.gameHeight - this.height;
       this.image = document.getElementById("meyersImg");
@@ -105,7 +105,7 @@ window.addEventListener("load", () => {
       this.frameTimer = 0;
       this.frameInterval = 1000 / this.fps;
       this.speed = 1;
-      this.speedIncrement = 0.147; //change back to 0.14
+      this.speedIncrement = 0.058; //change back to 0.14
     }
 
     draw(context) {
@@ -185,7 +185,7 @@ window.addEventListener("load", () => {
       this.frameInterval = 1000 / this.fps;
       this.speed = 0;
       this.vy = 0;
-      this.gravity = 1.2;
+      this.gravity = 0.85;
     }
     //this canvas method allows us to draw the context that we pass in to the canvas
     draw(context) {
@@ -284,11 +284,11 @@ window.addEventListener("load", () => {
       this.width = containerWidth;
       this.height = containerHeight + 190;
       // scroll of background image makes it appear player is moving forward
-      this.speed = 6;
+      this.speed = 5.5;
     }
     draw(context) {
       context.drawImage(this.image, this.x, this.y, this.width, this.height);
-      // draw translated image to tthe right to give appearance of seamless scrolling of backdrop
+      // draw translated image to the right to give appearance of seamless scrolling of backdrop
       context.drawImage(
         this.image,
         this.x + this.width - 1, // minus scroll speed helps create a slight overlap in img so no gap is vis
@@ -319,7 +319,7 @@ window.addEventListener("load", () => {
       this.image = document.getElementById("obstacleImg");
       this.x = this.gameWidth; //hides just outside of game window
       this.y = this.gameHeight - this.height; // prevents from going out of bounds vertically
-      this.speed = Math.floor(Math.random() * (14 - 9) + 5); // rate at which obstacles approach Laurie // could possibly have difficulty where its random and another whhere it's constant
+      this.speed = Math.floor(Math.random() * (14 - 10) + 5); // rate at which obstacles approach Laurie // could possibly have difficulty where its random and another where it's constant
       this.toDelete = false;
     }
     draw(context) {
