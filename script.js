@@ -7,7 +7,7 @@
 
 window.addEventListener("load", () => {
   const canvas = document.getElementById("canvas1");
-  //ctx = contect --> instance of built-in canvas 2d that holds drawing methods and properties needed for animation
+  //ctx = context --> instance of built-in canvas 2d that holds drawing methods and properties needed for animation
   const ctx = canvas.getContext("2d");
   let containerWidth = document.querySelector(".game-window").offsetWidth;
   let containerHeight = document.querySelector(".game-window").offsetHeight;
@@ -185,7 +185,7 @@ window.addEventListener("load", () => {
       this.frameInterval = 1000 / this.fps;
       this.speed = 0;
       this.vy = 0;
-      this.gravity = 1.23;
+      this.gravity = 1.2;
     }
     //this canvas method allows us to draw the context that we pass in to the canvas
     draw(context) {
@@ -284,7 +284,7 @@ window.addEventListener("load", () => {
       this.width = containerWidth;
       this.height = containerHeight + 190;
       // scroll of background image makes it appear player is moving forward
-      this.speed = 8;
+      this.speed = 6;
     }
     draw(context) {
       context.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -319,7 +319,7 @@ window.addEventListener("load", () => {
       this.image = document.getElementById("obstacleImg");
       this.x = this.gameWidth; //hides just outside of game window
       this.y = this.gameHeight - this.height; // prevents from going out of bounds vertically
-      this.speed = Math.floor(Math.random() * (14 - 9) + 9); // rate at which obstacles approach Laurie // could possibly have difficulty where its random and another whhere it's constant
+      this.speed = Math.floor(Math.random() * (14 - 9) + 5); // rate at which obstacles approach Laurie // could possibly have difficulty where its random and another whhere it's constant
       this.toDelete = false;
     }
     draw(context) {
