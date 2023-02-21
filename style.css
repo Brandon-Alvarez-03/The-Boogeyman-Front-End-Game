@@ -33,9 +33,10 @@ h1 {
 
 .game-window {
   position: relative;
-  min-width: 840px;
-  min-height: 520px;
-  width: 78%;
+  width: 90vw; /* set width to 90% of viewport width */
+  height: 60vh; /* set height to 60% of viewport height */
+  max-width: 1200px; /* set max-width to 1200px */
+  max-height: 800px; /* set max-height to 800px */
   margin: 10px;
   border: solid 0.5px #b73014;
 }
@@ -52,9 +53,8 @@ h1 {
   display: none;
   overflow-x: visible;
   overflow-y: visible;
-  /* margin-top: 5px; */
-  margin-bottom: -40px;
-  z-index: 2;
+  margin-top: 10px;
+  margin-bottom: -85px;
 }
 
 .enterBtn {
