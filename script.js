@@ -185,7 +185,7 @@ window.addEventListener("load", () => {
       this.frameInterval = 1000 / this.fps;
       this.speed = 0;
       this.vy = 0;
-      this.gravity = 0.85;
+      this.gravity = 1;
     }
     //this canvas method allows us to draw the context that we pass in to the canvas
     draw(context) {
