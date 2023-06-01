@@ -94,7 +94,7 @@ window.addEventListener("load", () => {
       this.width = 265;
       this.height = 280;
       //can move player by adjusting x and y coords
-      this.x = 0 - this.width * 1.45;
+      this.x = 0 - this.width * 1.28;
       //the game height minus the players height starts it right on the ground
       this.y = this.gameHeight - this.height;
       this.image = document.getElementById("meyersImg");
