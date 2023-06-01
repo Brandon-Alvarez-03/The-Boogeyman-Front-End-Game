@@ -104,8 +104,8 @@ window.addEventListener("load", () => {
       this.fps = 7;
       this.frameTimer = 0;
       this.frameInterval = 1000 / this.fps;
-      this.speed = 1;
-      this.speedIncrement = 0.058; //change back to 0.14
+      this.speed = 0.78;
+      this.speedIncrement = 0.06; //change back to 0.14
     }
 
     draw(context) {
@@ -185,7 +185,7 @@ window.addEventListener("load", () => {
       this.frameInterval = 1000 / this.fps;
       this.speed = 0;
       this.vy = 0;
-      this.gravity = 0.85;
+      this.gravity = 0.8;
     }
     //this canvas method allows us to draw the context that we pass in to the canvas
     draw(context) {
@@ -273,7 +273,7 @@ window.addEventListener("load", () => {
     }
   }
 
-  //background class  (endliss scrolling background)
+  //background class  (endless scrolling background)
   class Background {
     constructor(gameWidth, gameHeight) {
       this.gameHeight = gameHeight;
@@ -319,7 +319,7 @@ window.addEventListener("load", () => {
       this.image = document.getElementById("obstacleImg");
       this.x = this.gameWidth; //hides just outside of game window
       this.y = this.gameHeight - this.height; // prevents from going out of bounds vertically
-      this.speed = Math.floor(Math.random() * (14 - 10) + 5); // rate at which obstacles approach Laurie // could possibly have difficulty where its random and another where it's constant
+      this.speed = Math.floor(Math.random() * (10 - 6) + 5); // rate at which obstacles approach Laurie // could possibly have difficulty where its random and another where it's constant
       this.toDelete = false;
     }
     draw(context) {
