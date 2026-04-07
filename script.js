@@ -510,6 +510,18 @@ window.addEventListener("load", () => {
     handleObstacles(deltaTime);
     if (timerStart) displayStatusText(ctx);
 
+    // Show start prompt before game begins
+    if (!timerStart && !gameOver) {
+      ctx.font = "28px scaryFont";
+      ctx.textAlign = "center";
+      ctx.fillStyle = "white";
+      ctx.fillText("Press Arrow Key to Start", containerWidth / 2 - 3, containerHeight / 2 - 2);
+      ctx.fillStyle = "black";
+      ctx.fillText("Press Arrow Key to Start", containerWidth / 2 - 2, containerHeight / 2 - 1);
+      ctx.fillStyle = "#b73014";
+      ctx.fillText("Press Arrow Key to Start", containerWidth / 2, containerHeight / 2);
+    }
+
     // recursion for endless animation loop
     if (gameOver != true) requestAnimationFrame(animate);
     if (gameOver == true) {
